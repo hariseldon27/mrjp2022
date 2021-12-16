@@ -153,8 +153,11 @@ function deepIterator (target) {
                  count++;
                  console.log(count);
                  const li = document.createElement('li');
-                 li.classList.add(`item${count}`);
-                 document.querySelector('ul').append(li);
+                 li.classList.add(`itembox`);
+                 li.id = `item${count}`;
+                 document.querySelector('ul#wrapper').append(li);
+
             }
             else {console.log()}
         }
+
