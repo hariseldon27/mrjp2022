@@ -44,27 +44,6 @@ item1: {
 
 
     */
-      const myData = {
-        'block' : {
-              'uniqueID' : '00',
-              'property1' : 'image',
-              'text' : 'I love NYC',
-              'property2' : 'https://images.unsplash.com/photo-1546436836-07a91091f160?ixlib',
-          },
-          'block' : {
-            'uniqueID' : '01',
-            'property1' : 'image',
-            'text' : 'I love nature',
-            'property2' : 'https://images.unsplash.com/photo-1620497998642-c89a1a70ebe0',
-        },
-        'block' : {
-            'uniqueID' : '02',
-            'property1' : 'image',
-            'text' : 'go away bad man',
-            'property2' : 'https://images.unsplash.com/photo-1529966464641-ccc3988e5e4e',
-        },
-    }
-        
 
   /*function to iterate through the dataset and create a div based on "item" type*/
 
@@ -102,8 +81,7 @@ for (const key in itemNum) {
     console.log(typeof items);
     }
     */
-    const li = document.createElement('li');
-    li.classList.add('item');
+
     
     /*document.querySelector('li').append(div);*/
 /*
@@ -116,18 +94,6 @@ for (const key in itemNum) {
       }
     
     */
-
-      const p = {
-        'p0': 'value0',
-        'p1': {
-          'subDude': 'value1',
-        },
-        'p2': 'value2',
-        'p3': {
-          'subDude' : 'value3',
-          'subDude2' : 'artbitrary stuff'
-        }
-    };
 
 /*
       let counter = 0;
@@ -145,7 +111,58 @@ function deepIterator (target) {
       deepIterator(p)
       */
 
-const itemDetails = myData.block
+const myData = {
+        blocks: [ {
+              'uniqueID' : '00',
+              'property1' : 'image',
+              'text' : 'I love NYC',
+              'property2' : 'https://images.unsplash.com/photo-1546436836-07a91091f160?ixlib',
+        },
+        {
+            'uniqueID' : '01',
+            'property1' : 'image',
+            'text' : 'I love nature',
+            'property2' : 'https://images.unsplash.com/photo-1620497998642-c89a1a70ebe0',
+        },
+        {
+            'uniqueID' : '02',
+            'property1' : 'image',
+            'text' : 'go away bad man',
+            'property2' : 'https://images.unsplash.com/photo-1529966464641-ccc3988e5e4e',
+        },
+    ]
+}
+        
+
+const p = {
+        'p0': 'value0',
+        'p1': {
+          'subDude': 'value1',
+        },
+        'p2': 'value2',
+        'p3': {
+          'subDude' : 'value3',
+          'subDude2' : 'artbitrary stuff'
+        }
+    };
+
+const myImages = [
+        "http://mrjonathanpotter.com/wp-content/uploads/2019/03/bw-180602-ladp18-perfb-180602-DSCF7837.jpg",
+        "http://mrjonathanpotter.com/wp-content/uploads/2019/03/ladp18-perfa-color-180609-ladp18-perfA-180609-DSCF7423.jpg",
+        "http://mrjonathanpotter.com/wp-content/uploads/2018/10/HamletMachine-1730107.jpg",
+        "http://mrjonathanpotter.com/wp-content/uploads/2018/10/jakroo18-180805-DSCF4313.jpg",
+        "http://mrjonathanpotter.com/wp-content/uploads/2018/10/jakroo18-180805-DSCF3799.jpg",
+        "http://mrjonathanpotter.com/wp-content/uploads/2018/10/jakroo18-180804-DSCF8684.jpg",
+        "http://mrjonathanpotter.com/wp-content/uploads/2018/10/jakroo18-180804-DSCF1840.jpg",
+    ]
+const itemDetails = myData
+
+function randomPicker(dataset) {
+    const randomChoice = dataset[Math.floor(Math.random()*dataset.length)];
+    /*console.log(randomChoice);*/
+    return(randomChoice);
+}
+
 function iterator(itemCount) {
       let count = 0;
         for (const k in itemCount) {
@@ -156,6 +173,9 @@ function iterator(itemCount) {
                  li.classList.add(`itembox`);
                  li.id = `item${count}`;
                  document.querySelector('ul#wrapper').append(li);
+                 const img = document.createElement('img');
+                 document.querySelector('ul#wrapper .itembox').append(img);
+                 img.src = randomPicker(myImages);
 
             }
             else {console.log()}
@@ -163,23 +183,10 @@ function iterator(itemCount) {
     }
 iterator(itemDetails)
 
-const myImages = [
-    "http://mrjonathanpotter.com/wp-content/uploads/2019/03/bw-180602-ladp18-perfb-180602-DSCF7837.jpg",
-    "http://mrjonathanpotter.com/wp-content/uploads/2019/03/ladp18-perfa-color-180609-ladp18-perfA-180609-DSCF7423.jpg",
-    "http://mrjonathanpotter.com/wp-content/uploads/2018/10/HamletMachine-1730107.jpg",
-    "http://mrjonathanpotter.com/wp-content/uploads/2018/10/jakroo18-180805-DSCF4313.jpg",
-    "http://mrjonathanpotter.com/wp-content/uploads/2018/10/jakroo18-180805-DSCF3799.jpg",
-    "http://mrjonathanpotter.com/wp-content/uploads/2018/10/jakroo18-180804-DSCF8684.jpg",
-    "http://mrjonathanpotter.com/wp-content/uploads/2018/10/jakroo18-180804-DSCF1840.jpg",
-]
 
 
-function randomPicker(dataset) {
-    const randomChoice = dataset[Math.floor(Math.random()*dataset.length)];
-    console.log(randomChoice);
-    return(randomChoice);
-}
 
+/*
 function blockBuilder(dataSet) {
     let count = 0;
     for (const k in dataSet) {
@@ -187,10 +194,10 @@ function blockBuilder(dataSet) {
              count++;
              console.log(count);
              const img = document.createElement('img');
-             img.src = randomPicker(myImages);
              document.querySelector('ul#wrapper li').append(img);
+             img.src = randomPicker(myImages);
         }
         else {console.log("poop");}  
 }}
 blockBuilder(itemDetails)
-
+*/

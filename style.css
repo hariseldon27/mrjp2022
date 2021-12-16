@@ -18,29 +18,27 @@
 /*globals*/
 html {
     font-family: 'Questrial', sans-serif;
-
 }
 ul {
     display: flex;
     flex-wrap: wrap;
     list-style-type: none;
   }
-  
-  li {
+li {
     height: 30vh;
     flex-grow: 1;
     list-style-type: none;
-  }
-  
-  img {
+}
+li:last-child {
+    flex-grow: 10;
+    }
+img {
     max-height: 100%;
-    /*min-width: 100%;*/
+    min-width: 100%;
     object-fit: cover;
     vertical-align: bottom;
-  }
-  li:last-child {
-    flex-grow: 10;
-  }
+}
+
   // ADVANCED
 
 // Portrait
