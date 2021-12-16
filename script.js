@@ -145,8 +145,8 @@ function deepIterator (target) {
       deepIterator(p)
       */
 
-      const itemCount = myData.block
-
+const itemDetails = myData.block
+function iterator(itemCount) {
       let count = 0;
         for (const k in itemCount) {
             if (itemCount.hasOwnProperty(k)) {
@@ -160,4 +160,37 @@ function deepIterator (target) {
             }
             else {console.log()}
         }
+    }
+iterator(itemDetails)
+
+const myImages = [
+    "http://mrjonathanpotter.com/wp-content/uploads/2019/03/bw-180602-ladp18-perfb-180602-DSCF7837.jpg",
+    "http://mrjonathanpotter.com/wp-content/uploads/2019/03/ladp18-perfa-color-180609-ladp18-perfA-180609-DSCF7423.jpg",
+    "http://mrjonathanpotter.com/wp-content/uploads/2018/10/HamletMachine-1730107.jpg",
+    "http://mrjonathanpotter.com/wp-content/uploads/2018/10/jakroo18-180805-DSCF4313.jpg",
+    "http://mrjonathanpotter.com/wp-content/uploads/2018/10/jakroo18-180805-DSCF3799.jpg",
+    "http://mrjonathanpotter.com/wp-content/uploads/2018/10/jakroo18-180804-DSCF8684.jpg",
+    "http://mrjonathanpotter.com/wp-content/uploads/2018/10/jakroo18-180804-DSCF1840.jpg",
+]
+
+
+function randomPicker(dataset) {
+    const randomChoice = dataset[Math.floor(Math.random()*dataset.length)];
+    console.log(randomChoice);
+    return(randomChoice);
+}
+
+function blockBuilder(dataSet) {
+    let count = 0;
+    for (const k in dataSet) {
+        if (dataSet.hasOwnProperty(k)) {
+             count++;
+             console.log(count);
+             const img = document.createElement('img');
+             img.src = randomPicker(myImages);
+             document.querySelector('ul#wrapper li').append(img);
+        }
+        else {console.log("poop");}  
+}}
+blockBuilder(itemDetails)
 
