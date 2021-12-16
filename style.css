@@ -1,3 +1,101 @@
-body {
-    background:#f30
-}
+/*//////////////////////////////////////////////////////////////
+////    style.css for mrjp2022 development site.            ////
+////    Author: mrjp                                        ////
+////    Github: https://github.com/hariseldon27/mrjp2022    ////
+////    version: 1.1                                        ////
+////    date: 12-15-21                                      ////
+////    Acknowledgements: Typography and layout sizing      ////
+////    based on the work of Chris Coyier of CSS-Tricks     ////
+////    Experimenting with em for sizable text and rem      ////
+////    for the media queries.                              ////
+////////////////////////////////////////////////////////////////
+*/
+
+
+
+
+
+/*globals*/
+html {
+    font-size: 17px;
+    font-family: 'Readex Pro', sans-serif;
+  }
+  body {
+    padding: 0 1rem;
+  }
+h1 {
+    margin-top: 0;
+  }
+@media (max-width: 900px) {
+    html { font-size: 15px; }
+  }
+@media (max-width: 400px) {
+    html { font-size: 13px; }
+  }
+
+/* Modules will scale with document */
+.wrapper {
+    display: flex;  
+    flex-flow: row wrap;
+    font-weight: bold;
+    text-align: center; 
+  }
+  
+  .wrapper > * {
+    padding: 10px;
+    flex: 1 100%;
+  }
+  
+  .header {
+    background: tomato;
+    font-size: 1.5rem;
+  }
+  
+  .footer {
+    background: lightgreen;
+    font-size: 0.75rem;
+  }
+  
+  .main {
+    text-align: left;
+    background: deepskyblue;
+  }
+  
+  .aside-1 {
+    background: gold;
+    font-size: 0.85rem;
+  }
+  
+  .aside-2 {
+    background: hotpink;
+    font-size: 0.85rem;
+  }
+
+  
+  @media all and (min-width: 600px) {
+    .aside { flex: 1 0 0; }
+  }
+  
+  @media all and (min-width: 800px) {
+    .main    { flex: 3 0px; }
+    .aside-1 { order: 1; } 
+    .main    { order: 2; }
+    .aside-2 { order: 3; }
+    .footer  { order: 4; }
+  }
+  
+  body {
+    padding: 0 2em; 
+  }
+  
+  /* Type will scale with modules */
+  h1 {
+    font-size: 3em;
+  }
+  h2 {
+    font-size: 2.5em;
+  }
+  h3 {
+    font-size: 2em;
+  }
+  
