@@ -134,18 +134,6 @@ const myData = {
 }
         
 
-const p = {
-        'p0': 'value0',
-        'p1': {
-          'subDude': 'value1',
-        },
-        'p2': 'value2',
-        'p3': {
-          'subDude' : 'value3',
-          'subDude2' : 'artbitrary stuff'
-        }
-    };
-
 const myImages = [
         "http://mrjonathanpotter.com/wp-content/uploads/2019/03/bw-180602-ladp18-perfb-180602-DSCF7837.jpg",
         "http://mrjonathanpotter.com/wp-content/uploads/2019/03/ladp18-perfa-color-180609-ladp18-perfA-180609-DSCF7423.jpg",
@@ -163,10 +151,34 @@ function randomPicker(dataset) {
     return(randomChoice);
 }
 
+let count = 0;
+function blockBuilder() {
+    for (let i=0; i < myData.blocks.length; i++) {
+        count++;
+        console.log(count);
+                 const li = document.createElement('li');
+                 li.classList.add(`itembox`);
+                 li.id = `item${count}`;
+                 document.querySelector('ul#wrapper').append(li);
+                 imageInject();
+    }
+}
+
+function imageInject() {
+    //for (let i=0; i < myData.blocks.length; i++) {
+        const img = document.createElement('img');
+        document.querySelector(`ul#wrapper li#item${count}`).append(img);
+        img.src = randomPicker(myImages);
+}
+
+blockBuilder();
+//}
+
+/*
 function iterator(itemCount) {
       let count = 0;
         for (const k in itemCount) {
-            if (itemCount.hasOwnProperty(k)) {
+            //if (itemCount.hasOwnProperty(k)) {
                  count++;
                  console.log(count);
                  const li = document.createElement('li');
@@ -177,8 +189,8 @@ function iterator(itemCount) {
                  document.querySelector('ul#wrapper .itembox').append(img);
                  img.src = randomPicker(myImages);
 
-            }
-            else {console.log()}
+           // }
+           // else {console.log()}
         }
     }
 iterator(itemDetails)
