@@ -116,7 +116,6 @@ const myData = {
             {
                 'uniqueID' : '00',
                 'type' : 'image',
-                'text' : 'theater',
                 'url' : `${fileStore}/california1-color-vert-23.jpg`,
         },
             {
@@ -128,7 +127,7 @@ const myData = {
             {
                 'uniqueID' : '02',
                 'type' : 'image',
-                'text' : '',
+                'text' : ' ',
                 'url' : `${fileStore}/california2-bw-sq.jpg`,
         },
             {
@@ -212,9 +211,10 @@ function blockBuilder() {
         const typer = myData.blocks[i].type;
         const dataImage = myData.blocks[i].url;
         const posterColor = myData.blocks[i].color;
+        const text = myData.blocks[i].text;
+        const textAvail = myData.blocks[i]
         
         function textInjector() {
-            const text = myData.blocks[i].text;
             document.querySelector(`li#item${count} > .itemText`).innerHTML = text;
             }
         
@@ -230,9 +230,15 @@ function blockBuilder() {
             document.querySelector('ul#wrapper').append(li);
         }
         function peeMaker() {
-            const p = document.createElement('p');
-            p.classList.add(`itemText`);
-            document.querySelector(`ul#wrapper li#item${count}`).append(p);    
+            if (textAvail.hasOwnProperty('text')) {
+                const p = document.createElement('p');
+                p.classList.add(`itemText`);
+                document.querySelector(`ul#wrapper li#item${count}`).append(p);
+                textInjector();
+        }
+            else {
+
+            }
         }
         function posterMaker() {
 
@@ -247,10 +253,11 @@ function blockBuilder() {
             document.querySelector(`li#item${count}.poster`).style.backgroundColor = `${posterColor}`;
         }
 
-        textInjector();   
-        //debugger
-        console.log(typer);
-        console.log(posterColor);
+
+       // debugger;
+        console.log(`datatype is: ${typer}`);
+        console.log(`color input is: ${posterColor}`);
+        console.log(`text input is: ${text}`);
     }
 }
 blockBuilder();
