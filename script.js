@@ -179,6 +179,9 @@ const myData = {
                 'type' : 'image',
                 'text' : 'I am from Oregon',
                 'url' : `california14-color-horiz-23.jpg`,
+                'customtag' : 'oregon',
+                'fontcolor' : '#FFF',
+                'fontsize' : '6rem',
         },
             {
                 'uniqueID' : '11',
@@ -228,6 +231,7 @@ function blockBuilder() {
         const text = myData.blocks[i].text;
         const subText = myData.blocks[i].subtext;
         const fontColor = myData.blocks[i].fontcolor;
+        const fontSize = myData.blocks[i].fontsize;
         const countingData = myData.blocks[i]
         
         function boxMaker () {
@@ -266,22 +270,32 @@ function blockBuilder() {
             }
         }
         function styleAdd() {
-            
             if (countingData.hasOwnProperty('fontcolor')) {
                 document.querySelector(`li#item${count} p.itemText`).style.color = `${fontColor}`;
+            }
+            if (countingData.hasOwnProperty('fontsize')) {
+                document.querySelector(`li#item${count} p.itemText`).style.fontSize = `${fontSize}`;
+            }
+        }
+        function tagAdd() {
+            customTag = countingData.customtag;
+            if (countingData.hasOwnProperty('customtag')) {
+                document.querySelector(`li#item${count}`).classList.add(`${customTag}`)
             }
         }
         boxMaker();
         peeMaker();
         backgroundMaker();
         styleAdd();
+        tagAdd();
 
        
         console.log(`datatype is: ${typer}`);
         console.log(`color input is: ${posterColor}`);
         console.log(`text input is: ${text}`);
-        console.log(`subtext input is: ${subText}`)
-        console.log(`fontcolor input is: ${fontColor}`)
+        console.log(`subtext input is: ${subText}`);
+        console.log(`fontcolor input is: ${fontColor}`);
+        console.log(`the custom tag input is: ${customTag}`);
         //debugger;
     }
 }
