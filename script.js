@@ -156,14 +156,18 @@ function blockBuilder() {
     for (let i=0; i < myData.blocks.length; i++) {
         count++;
         console.log(count);
-                 const li = document.createElement('li');
-                 li.classList.add(`itembox`);
-                 li.id = `item${count}`;
-                 document.querySelector('ul#wrapper').append(li);
+                boxMaker ();
                  imageInject();
+                 peeMaker();
     }
 }
 
+function boxMaker () {
+    const li = document.createElement('li');
+    li.classList.add(`itembox`);
+    li.id = `item${count}`;
+    document.querySelector('ul#wrapper').append(li);
+}
 function imageInject() {
     //for (let i=0; i < myData.blocks.length; i++) {
         const img = document.createElement('img');
@@ -171,45 +175,17 @@ function imageInject() {
         img.src = randomPicker(myImages);
 }
 
+function peeMaker() {
+        const p = document.createElement('p');
+        document.querySelector(`ul#wrapper li#item${count}`).append(p);
+        
+}
+
 blockBuilder();
-//}
 
-/*
-function iterator(itemCount) {
-      let count = 0;
-        for (const k in itemCount) {
-            //if (itemCount.hasOwnProperty(k)) {
-                 count++;
-                 console.log(count);
-                 const li = document.createElement('li');
-                 li.classList.add(`itembox`);
-                 li.id = `item${count}`;
-                 document.querySelector('ul#wrapper').append(li);
-                 const img = document.createElement('img');
-                 document.querySelector('ul#wrapper .itembox').append(img);
-                 img.src = randomPicker(myImages);
+function dataInjector() {
+    for (let i=0; i < myData.blocks.length; i++) {
+        count++
+        document.querySelector(`#item${count} p`).innerHTML = myData.blocks[i].text;
+    }}
 
-           // }
-           // else {console.log()}
-        }
-    }
-iterator(itemDetails)
-
-
-
-
-/*
-function blockBuilder(dataSet) {
-    let count = 0;
-    for (const k in dataSet) {
-        if (dataSet.hasOwnProperty(k)) {
-             count++;
-             console.log(count);
-             const img = document.createElement('img');
-             document.querySelector('ul#wrapper li').append(img);
-             img.src = randomPicker(myImages);
-        }
-        else {console.log("poop");}  
-}}
-blockBuilder(itemDetails)
-*/
