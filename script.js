@@ -159,9 +159,9 @@ function blockBuilder() {
                 boxMaker ();
                  imageInject();
                  peeMaker();
+                 textInjector();
     }
 }
-
 function boxMaker () {
     const li = document.createElement('li');
     li.classList.add(`itembox`);
@@ -169,7 +169,6 @@ function boxMaker () {
     document.querySelector('ul#wrapper').append(li);
 }
 function imageInject() {
-    //for (let i=0; i < myData.blocks.length; i++) {
         const img = document.createElement('img');
         document.querySelector(`ul#wrapper li#item${count}`).append(img);
         img.src = randomPicker(myImages);
@@ -177,15 +176,13 @@ function imageInject() {
 
 function peeMaker() {
         const p = document.createElement('p');
-        document.querySelector(`ul#wrapper li#item${count}`).append(p);
-        
+        p.classList.add(`itemText`);
+        document.querySelector(`ul#wrapper li#item${count}`).append(p);    
 }
+function textInjector() {
+        document.querySelector(`li#item${count} > .itemText`).innerHTML = "go away!!";
+    }
+
 
 blockBuilder();
-
-function dataInjector() {
-    for (let i=0; i < myData.blocks.length; i++) {
-        count++
-        document.querySelector(`#item${count} p`).innerHTML = myData.blocks[i].text;
-    }}
 
