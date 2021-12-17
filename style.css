@@ -13,20 +13,19 @@
 
 /*playpen*/
 .itembox {
-    position: relative;
-    text-align: center;
-    margin: 0 auto;
+  position: relative;
+  text-align: center;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-li p {
-    position: absolute;
-    display: block;
-    font-size: 200%;
-    margin: 0 auto;
-    text-align: center;
-    width: 100%;
-    top: 50%;
-  }
+.itembox p {
+font-size: 200%;
+position: absolute;
+}
+
 
 img  {
     animation-name: fadeInOut, moveLeft300px, bounce;
@@ -46,9 +45,9 @@ img  {
 }
 #item1 p {
     background: rgba(233,233,233,.3);
-    height: 70%;
-    margin: auto;
+    padding: .5em;
 }
+
 
 /*///////////////
 /*globals*/

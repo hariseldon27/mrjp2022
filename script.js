@@ -129,7 +129,7 @@ const myData = {
                 'uniqueID' : '02',
                 'type' : 'image',
                 'text' : '',
-                'url' : 'http://mrjonathanpotter.com/wp-content/uploads/2019/03/bw-180602-ladp18-perfb-180602-DSCF7837.jpg"',
+                'url' : 'https://www.dropbox.com/s/29lyjg993zbgiar/135-012621-1-16-insta.jpg',
         },
             {
                 'uniqueID' : '03',
@@ -140,8 +140,8 @@ const myData = {
             {
                 'uniqueID' : '04',
                 'type' : 'image',
-                'text' : 'I love nature',
-                'url' : 'http://mrjonathanpotter.com/wp-content/uploads/2018/10/jakroo18-180805-DSCF3799.jpg',
+                'text' : '',
+                'url' : './jonathan-potter-tintype-072317_jpotter_pdx.jpg',
         },
             {
                 'uniqueID' : '05',
