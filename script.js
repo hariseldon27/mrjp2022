@@ -121,7 +121,7 @@ const myData = {
             {
                 'uniqueID' : '01',
                 'type' : 'image',
-                'text' : 'dance',
+                'text' : '',
                 'url' : `california3-bw-sq.jpg`,
         },
             {
@@ -144,15 +144,16 @@ const myData = {
         },
             {
                 'uniqueID' : '05',
-                'type' : 'image',
-                'text' : 'iterate',
-                'url' : 'stilllife-bw-horiz-67.jpg',
-        },
-            {
-                'uniqueID' : '06',
                 'type' : 'poster',
                 'text' : 'My name is Jonathan Potter.',
                 'color' : '#0f4c81',
+                'fontcolor' : '#FFF',
+        },
+        {
+                'uniqueID' : '06',
+                'type' : 'image',
+                'text' : '',
+                'url' : 'stilllife-bw-horiz-67.jpg',
         },
             {
                 'uniqueID' : '07',
@@ -161,36 +162,48 @@ const myData = {
                 'url' : `jonathan-potter-self-working1.jpg`,
         },
         {
-            'uniqueID' : '08',
-            'type' : 'poster',
-            'text' : 'I am a photographer and filmmaker.',
-            'subtext' : '(and software developer in training)',
-            'color' : '#E8E6A2',
+                'uniqueID' : '08',
+                'type' : 'poster',
+                'text' : 'I am a photographer and filmmaker.',
+                'subtext' : '(and software developer in training)',
+                'color' : '#E8E6A2',
             },
         {
                 'uniqueID' : '09',
                 'type' : 'image',
-                'text' : 'I love nature',
+                'text' : '',
                 'url' : `california9-color-horiz-23.jpg`,
         },
             {
                 'uniqueID' : '10',
                 'type' : 'image',
-                'text' : 'go away bad man',
-                'url' : `california5-bw-horiz-23.jpg`,
+                'text' : 'I am from Oregon',
+                'url' : `california14-color-horiz-23.jpg`,
         },
             {
                 'uniqueID' : '11',
                 'type' : 'image',
-                'text' : 'I love nature',
+                'text' : '',
                 'url' : `california4-color-sq.jpg`,
         },
             {
                 'uniqueID' : '12',
                 'type' : 'image',
-                'text' : 'go away bad man',
+                'text' : '',
                 'url' : `california11-color-horiz-23.jpg`,
         },
+        {
+            'uniqueID' : '13',
+            'type' : 'image',
+            'text' : '',
+            'url' : `jonathan-potter-self-working2.jpg`,
+            },
+        {
+            'uniqueID' : '14',
+            'type' : 'image',
+            'text' : 'but I have deep for California',
+            'url' : `california7-bw-horiz-23.jpg`,
+            },
     ]
 }
         
@@ -214,17 +227,9 @@ function blockBuilder() {
         const posterColor = myData.blocks[i].color;
         const text = myData.blocks[i].text;
         const subText = myData.blocks[i].subtext;
-        const textAvail = myData.blocks[i]
+        const fontColor = myData.blocks[i].fontcolor;
+        const countingData = myData.blocks[i]
         
-        function textInjector(dataSource) {
-            document.querySelector(`li#item${count} > .itemText`).innerHTML = dataSource;
-            }
-        
-        function imageInject() {
-            const img = document.createElement('img');
-            document.querySelector(`ul#wrapper li#item${count}`).append(img);
-            img.src = dataImage;
-        }
         function boxMaker () {
             const li = document.createElement('li');
             li.classList.add(`itembox`, `${typer}`);
@@ -232,39 +237,52 @@ function blockBuilder() {
             document.querySelector('ul#wrapper').append(li);
         }
         function peeMaker() {
-            if (textAvail.hasOwnProperty('text')) {
+            if (countingData.hasOwnProperty('text')) {
                 const p = document.createElement('p');
                 p.classList.add(`itemText`);
                 document.querySelector(`ul#wrapper li#item${count}`).append(p);
                 textInjector(text);
         }
-            if (textAvail.hasOwnProperty('subtext')) {
+            if (countingData.hasOwnProperty('subtext')) {
                     const p = document.createElement('p');
                     p.classList.add(`subtext`);
                     document.querySelector(`ul#wrapper li#item${count}`).append(p);
                     document.querySelector(`li#item${count} > .subtext`).innerHTML = subText;
                 }
             }
-        
-        function posterMaker() {
-
+        function textInjector(dataSource) {
+            document.querySelector(`li#item${count} > .itemText`).innerHTML = dataSource;
+            }
+        function imageInject() {
+            const img = document.createElement('img');
+            document.querySelector(`ul#wrapper li#item${count}`).append(img);
+            img.src = dataImage;
+        }
+        function backgroundMaker() {
+            if (typer === `image`) { 
+                imageInject();}
+            else if (typer === `poster`) {
+                document.querySelector(`li#item${count}.poster`).style.backgroundColor = `${posterColor}`;
+            }
+        }
+        function styleAdd() {
+            
+            if (countingData.hasOwnProperty('fontcolor')) {
+                document.querySelector(`li#item${count} p.itemText`).style.color = `${fontColor}`;
+            }
         }
         boxMaker();
         peeMaker();
-        
+        backgroundMaker();
+        styleAdd();
 
-        if (typer === `image`) { 
-            imageInject();}
-        else if (typer === `poster`) {
-            document.querySelector(`li#item${count}.poster`).style.backgroundColor = `${posterColor}`;
-        }
-
-
-       // debugger;
+       
         console.log(`datatype is: ${typer}`);
         console.log(`color input is: ${posterColor}`);
         console.log(`text input is: ${text}`);
         console.log(`subtext input is: ${subText}`)
+        console.log(`fontcolor input is: ${fontColor}`)
+        //debugger;
     }
 }
 blockBuilder();

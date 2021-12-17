@@ -21,8 +21,8 @@
   align-items: center;
 }
 
-.itembox p {
-font-size: 200%;
+p.itemText {
+font-size: 2rem;
 position: absolute;
 }
 
@@ -34,8 +34,8 @@ img  {
 }
 
 .poster {
-  min-width: 20%;
-  max-width: 40%;
+  min-width: 28em;
+  max-width: 100%;
 }
 
 #wrapper {
@@ -51,7 +51,7 @@ body {
 }
 
 #item1 {
-  font-size : 200%;
+/*  font-size : 200%;*/
   color: white;
 }
 #item1 p {
@@ -64,6 +64,7 @@ body {
 /*globals*/
 html {
     font-family: 'Questrial', sans-serif;
+    color: #0f4c81;
 }
 ul {
     display: flex;
@@ -88,9 +89,9 @@ img {
 }
 
 p.subtext  {
-  border: 2px red solid;
+  /*border: 2px red solid;*/
   position:absolute;
-  font-size: 1em;
+  /*font-size: 1em;*/
   bottom: 1em;
 
 }
