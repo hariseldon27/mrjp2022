@@ -152,14 +152,19 @@ function randomPicker(dataset) {
 }
 
 let count = 0;
+let i 
 function blockBuilder() {
     for (let i=0; i < myData.blocks.length; i++) {
         count++;
         console.log(count);
-                boxMaker ();
-                 imageInject();
-                 peeMaker();
-                 textInjector();
+        boxMaker ();
+        imageInject();
+        peeMaker();
+        textInjector();
+        function textInjector() {
+            const text = myData.blocks[i].text;
+            document.querySelector(`li#item${count} > .itemText`).innerHTML = text;
+            }
     }
 }
 function boxMaker () {
@@ -169,6 +174,7 @@ function boxMaker () {
     document.querySelector('ul#wrapper').append(li);
 }
 function imageInject() {
+     
         const img = document.createElement('img');
         document.querySelector(`ul#wrapper li#item${count}`).append(img);
         img.src = randomPicker(myImages);
@@ -179,9 +185,8 @@ function peeMaker() {
         p.classList.add(`itemText`);
         document.querySelector(`ul#wrapper li#item${count}`).append(p);    
 }
-function textInjector() {
-        document.querySelector(`li#item${count} > .itemText`).innerHTML = "go away!!";
-    }
+
+
 
 
 blockBuilder();
