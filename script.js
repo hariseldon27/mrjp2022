@@ -110,85 +110,86 @@ function deepIterator (target) {
       }
       deepIterator(p)
       */
-const fileStore = 'https://mrjpfiles.s3.us-west-2.amazonaws.com'
+const fileStore = 'https://mrjpfiles.s3.us-west-2.amazonaws.com/'
 const myData = {
         blocks: [ 
             {
                 'uniqueID' : '00',
                 'type' : 'image',
-                'url' : `${fileStore}/california1-color-vert-23.jpg`,
+                'url' : `california1-color-vert-23.jpg`,
         },
             {
                 'uniqueID' : '01',
                 'type' : 'image',
                 'text' : 'dance',
-                'url' : `${fileStore}/california3-bw-sq.jpg`,
+                'url' : `california3-bw-sq.jpg`,
         },
             {
                 'uniqueID' : '02',
                 'type' : 'image',
                 'text' : ' ',
-                'url' : `${fileStore}/california2-bw-sq.jpg`,
+                'url' : `california2-bw-sq.jpg`,
         },
             {
                 'uniqueID' : '03',
                 'type' : 'poster',
-                'text' : 'create',
-                'color' : '#f4f',
+                'text' : 'Hi!',
+                'color' : '#e78b90',
         },
             {
                 'uniqueID' : '04',
                 'type' : 'image',
                 'text' : '',
-                'url' : `${fileStore}/jonathan-potter-tintype-072317_jpotter_pdx.jpg`,
+                'url' : `jonathan-potter-tintype-072317_jpotter_pdx.jpg`,
         },
             {
                 'uniqueID' : '05',
-                'type' : 'poster',
-                'text' : 'watch',
-                'color' : '#333',
+                'type' : 'image',
+                'text' : 'iterate',
+                'url' : 'stilllife-bw-horiz-67.jpg',
         },
             {
                 'uniqueID' : '06',
                 'type' : 'poster',
-                'text' : 'the',
-                'color' : '#333',
+                'text' : 'My name is Jonathan Potter.',
+                'color' : '#0f4c81',
         },
             {
                 'uniqueID' : '07',
-                'type' : 'poster',
-                'text' : 'sky',
-                'color' : '#333',
-        },
-            {
-                'uniqueID' : '08',
                 'type' : 'image',
-                'text' : 'go away bad man',
-                'url' : `${fileStore}/jonathan-potter-self-working1.jpg`,
+                'text' : '',
+                'url' : `jonathan-potter-self-working1.jpg`,
         },
         {
-                'uniqueID' : '07',
+            'uniqueID' : '08',
+            'type' : 'poster',
+            'text' : 'I am a photographer and filmmaker.',
+            'subtext' : '(and software developer in training)',
+            'color' : '#E8E6A2',
+            },
+        {
+                'uniqueID' : '09',
                 'type' : 'image',
                 'text' : 'I love nature',
-                'url' : `${fileStore}/california9-color-horiz-23.jpg`,
+                'url' : `california9-color-horiz-23.jpg`,
         },
             {
-                'uniqueID' : '08',
+                'uniqueID' : '10',
                 'type' : 'image',
                 'text' : 'go away bad man',
-                'url' : `${fileStore}/california5-bw-horiz-23.jpg`,
+                'url' : `california5-bw-horiz-23.jpg`,
         },
             {
-                'uniqueID' : '07',
+                'uniqueID' : '11',
                 'type' : 'image',
                 'text' : 'I love nature',
-                'url' : `${fileStore}/california4-color-sq.jpg`,
+                'url' : `california4-color-sq.jpg`,
         },
             {
-                'uniqueID' : '08',
+                'uniqueID' : '12',
                 'type' : 'image',
                 'text' : 'go away bad man',
-                'url' : `${fileStore}/california11-color-horiz-23.jpg`,
+                'url' : `california11-color-horiz-23.jpg`,
         },
     ]
 }
@@ -209,13 +210,14 @@ function blockBuilder() {
         count++;
         console.log(count);
         const typer = myData.blocks[i].type;
-        const dataImage = myData.blocks[i].url;
+        const dataImage = fileStore + myData.blocks[i].url;
         const posterColor = myData.blocks[i].color;
         const text = myData.blocks[i].text;
+        const subText = myData.blocks[i].subtext;
         const textAvail = myData.blocks[i]
         
-        function textInjector() {
-            document.querySelector(`li#item${count} > .itemText`).innerHTML = text;
+        function textInjector(dataSource) {
+            document.querySelector(`li#item${count} > .itemText`).innerHTML = dataSource;
             }
         
         function imageInject() {
@@ -234,12 +236,16 @@ function blockBuilder() {
                 const p = document.createElement('p');
                 p.classList.add(`itemText`);
                 document.querySelector(`ul#wrapper li#item${count}`).append(p);
-                textInjector();
+                textInjector(text);
         }
-            else {
-
+            if (textAvail.hasOwnProperty('subtext')) {
+                    const p = document.createElement('p');
+                    p.classList.add(`subtext`);
+                    document.querySelector(`ul#wrapper li#item${count}`).append(p);
+                    document.querySelector(`li#item${count} > .subtext`).innerHTML = subText;
+                }
             }
-        }
+        
         function posterMaker() {
 
         }
@@ -258,6 +264,7 @@ function blockBuilder() {
         console.log(`datatype is: ${typer}`);
         console.log(`color input is: ${posterColor}`);
         console.log(`text input is: ${text}`);
+        console.log(`subtext input is: ${subText}`)
     }
 }
 blockBuilder();
