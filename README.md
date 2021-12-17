@@ -17,11 +17,11 @@ Currently the plan is the work through the site in a few phases:
 3) begin implementation of original plan
 4) Throw out original plan
 5) decide on new gallery style site
-
-We are Here --> 6) implement basic working version of layout UL
-
+6) implement basic working version of layout UL
 7) javascript to create new LI items for ul based on data source (object?)
-8) define modules for 3 data types: image, youtube, text
+
+We are Here --> 8) define modules for 3 data types: image, youtube, text
+
 9) hook data to html with js
 10) style refining
 11) data generation
