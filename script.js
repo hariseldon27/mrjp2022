@@ -110,26 +110,26 @@ function deepIterator (target) {
       }
       deepIterator(p)
       */
-
+const fileStore = 'https://mrjpfiles.s3.us-west-2.amazonaws.com'
 const myData = {
         blocks: [ 
             {
                 'uniqueID' : '00',
                 'type' : 'image',
                 'text' : 'theater',
-                'url' : 'http://mrjonathanpotter.com/wp-content/uploads/2018/10/HamletMachine-1730107.jpg',
+                'url' : `${fileStore}/california1-color-vert-23.jpg`,
         },
             {
                 'uniqueID' : '01',
                 'type' : 'image',
                 'text' : 'dance',
-                'url' : './images/bw3-sq-field.jpg',
+                'url' : `${fileStore}/california3-bw-sq.jpg`,
         },
             {
                 'uniqueID' : '02',
                 'type' : 'image',
                 'text' : '',
-                'url' : './images/bw6-sq-tree.jpg',
+                'url' : `${fileStore}/california2-bw-sq.jpg`,
         },
             {
                 'uniqueID' : '03',
@@ -141,7 +141,7 @@ const myData = {
                 'uniqueID' : '04',
                 'type' : 'image',
                 'text' : '',
-                'url' : './images/jonathan-potter-tintype-072317_jpotter_pdx.jpg',
+                'url' : `${fileStore}/jonathan-potter-tintype-072317_jpotter_pdx.jpg`,
         },
             {
                 'uniqueID' : '05',
@@ -165,31 +165,31 @@ const myData = {
                 'uniqueID' : '08',
                 'type' : 'image',
                 'text' : 'go away bad man',
-                'url' : 'http://mrjonathanpotter.com/wp-content/uploads/2018/10/jakroo18-180804-DSCF1840.jpg',
+                'url' : `${fileStore}/jonathan-potter-self-working1.jpg`,
         },
         {
                 'uniqueID' : '07',
                 'type' : 'image',
                 'text' : 'I love nature',
-                'url' : 'http://mrjonathanpotter.com/wp-content/uploads/2018/10/jakroo18-180805-DSCF3799.jpg',
+                'url' : `${fileStore}/california9-color-horiz-23.jpg`,
         },
             {
                 'uniqueID' : '08',
                 'type' : 'image',
                 'text' : 'go away bad man',
-                'url' : 'http://mrjonathanpotter.com/wp-content/uploads/2018/10/jakroo18-180804-DSCF1840.jpg',
+                'url' : `${fileStore}/california5-bw-horiz-23.jpg`,
         },
             {
                 'uniqueID' : '07',
                 'type' : 'image',
                 'text' : 'I love nature',
-                'url' : 'http://mrjonathanpotter.com/wp-content/uploads/2018/10/jakroo18-180805-DSCF3799.jpg',
+                'url' : `${fileStore}/california4-color-sq.jpg`,
         },
             {
                 'uniqueID' : '08',
                 'type' : 'image',
                 'text' : 'go away bad man',
-                'url' : 'http://mrjonathanpotter.com/wp-content/uploads/2018/10/jakroo18-180804-DSCF1840.jpg',
+                'url' : `${fileStore}/california11-color-horiz-23.jpg`,
         },
     ]
 }
