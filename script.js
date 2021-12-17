@@ -112,38 +112,64 @@ function deepIterator (target) {
       */
 
 const myData = {
-        blocks: [ {
+        blocks: [ 
+            {
               'uniqueID' : '00',
               'property1' : 'image',
               'text' : 'I love NYC',
-              'property2' : 'https://images.unsplash.com/photo-1546436836-07a91091f160?ixlib',
+              'url' : 'http://mrjonathanpotter.com/wp-content/uploads/2018/10/HamletMachine-1730107.jpg',
         },
         {
             'uniqueID' : '01',
             'property1' : 'image',
             'text' : 'I love nature',
-            'property2' : 'https://images.unsplash.com/photo-1620497998642-c89a1a70ebe0',
+            'url' : 'http://mrjonathanpotter.com/wp-content/uploads/2019/03/ladp18-perfa-color-180609-ladp18-perfA-180609-DSCF7423.jpg',
         },
         {
             'uniqueID' : '02',
             'property1' : 'image',
             'text' : 'go away bad man',
-            'property2' : 'https://images.unsplash.com/photo-1529966464641-ccc3988e5e4e',
+            'url' : 'http://mrjonathanpotter.com/wp-content/uploads/2019/03/bw-180602-ladp18-perfb-180602-DSCF7837.jpg"',
         },
+        {
+            'uniqueID' : '03',
+            'property1' : 'image',
+            'text' : 'I love NYC',
+            'url' : 'http://mrjonathanpotter.com/wp-content/uploads/2018/10/jakroo18-180804-DSCF8684.jpg',
+      },
+      {
+          'uniqueID' : '04',
+          'property1' : 'image',
+          'text' : 'I love nature',
+          'url' : 'http://mrjonathanpotter.com/wp-content/uploads/2018/10/jakroo18-180805-DSCF3799.jpg',
+      },
+      {
+          'uniqueID' : '05',
+          'property1' : 'image',
+          'text' : 'go away bad man',
+          'url' : 'http://mrjonathanpotter.com/wp-content/uploads/2018/10/jakroo18-180805-DSCF4313.jpg',
+      },
+      {
+        'uniqueID' : '03',
+        'property1' : 'image',
+        'text' : 'I love NYC',
+        'url' : 'http://mrjonathanpotter.com/wp-content/uploads/2018/10/jakroo18-180804-DSCF8684.jpg',
+  },
+  {
+      'uniqueID' : '04',
+      'property1' : 'image',
+      'text' : 'I love nature',
+      'url' : 'http://mrjonathanpotter.com/wp-content/uploads/2018/10/jakroo18-180805-DSCF3799.jpg',
+  },
+  {
+      'uniqueID' : '05',
+      'property1' : 'image',
+      'text' : 'go away bad man',
+      'url' : 'http://mrjonathanpotter.com/wp-content/uploads/2018/10/jakroo18-180804-DSCF1840.jpg',
+  },
     ]
 }
         
-
-const myImages = [
-        "http://mrjonathanpotter.com/wp-content/uploads/2019/03/bw-180602-ladp18-perfb-180602-DSCF7837.jpg",
-        "http://mrjonathanpotter.com/wp-content/uploads/2019/03/ladp18-perfa-color-180609-ladp18-perfA-180609-DSCF7423.jpg",
-        "http://mrjonathanpotter.com/wp-content/uploads/2018/10/HamletMachine-1730107.jpg",
-        "http://mrjonathanpotter.com/wp-content/uploads/2018/10/jakroo18-180805-DSCF4313.jpg",
-        "http://mrjonathanpotter.com/wp-content/uploads/2018/10/jakroo18-180805-DSCF3799.jpg",
-        "http://mrjonathanpotter.com/wp-content/uploads/2018/10/jakroo18-180804-DSCF8684.jpg",
-        "http://mrjonathanpotter.com/wp-content/uploads/2018/10/jakroo18-180804-DSCF1840.jpg",
-    ]
-const itemDetails = myData
 
 function randomPicker(dataset) {
     const randomChoice = dataset[Math.floor(Math.random()*dataset.length)];
@@ -152,42 +178,37 @@ function randomPicker(dataset) {
 }
 
 let count = 0;
-let i 
+
 function blockBuilder() {
     for (let i=0; i < myData.blocks.length; i++) {
         count++;
         console.log(count);
-        boxMaker ();
-        imageInject();
-        peeMaker();
-        textInjector();
         function textInjector() {
             const text = myData.blocks[i].text;
             document.querySelector(`li#item${count} > .itemText`).innerHTML = text;
             }
+        const dataImage = myData.blocks[i].url;
+        function imageInject() {
+            const img = document.createElement('img');
+            document.querySelector(`ul#wrapper li#item${count}`).append(img);
+            img.src = dataImage;
+        }
+        function boxMaker () {
+            const li = document.createElement('li');
+            li.classList.add(`itembox`);
+            li.id = `item${count}`;
+            document.querySelector('ul#wrapper').prepend(li);
+        }
+        function peeMaker() {
+            const p = document.createElement('p');
+            p.classList.add(`itemText`);
+            document.querySelector(`ul#wrapper li#item${count}`).append(p);    
+        }
+        boxMaker ();
+        imageInject();
+        peeMaker();
+        textInjector();   
     }
 }
-function boxMaker () {
-    const li = document.createElement('li');
-    li.classList.add(`itembox`);
-    li.id = `item${count}`;
-    document.querySelector('ul#wrapper').append(li);
-}
-function imageInject() {
-     
-        const img = document.createElement('img');
-        document.querySelector(`ul#wrapper li#item${count}`).append(img);
-        img.src = randomPicker(myImages);
-}
-
-function peeMaker() {
-        const p = document.createElement('p');
-        p.classList.add(`itemText`);
-        document.querySelector(`ul#wrapper li#item${count}`).append(p);    
-}
-
-
-
-
 blockBuilder();
 

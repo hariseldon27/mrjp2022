@@ -11,10 +11,31 @@
 ////////////////////////////////////////////////////////////////
 */
 
+/*playpen*/
+.itembox {
+    position: relative;
+    text-align: center;
+    margin: 0 auto;
+}
+
+li p {
+    position: absolute;
+    display: block;
+    font-size: 200%;
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+    top: 50%;
+  }
+
+img  {
+    animation-name: fadeInOut, moveLeft300px, bounce;
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+}
 
 
-
-
+/*///////////////
 /*globals*/
 html {
     font-family: 'Questrial', sans-serif;
