@@ -123,13 +123,13 @@ const myData = {
                 'uniqueID' : '01',
                 'type' : 'image',
                 'text' : 'dance',
-                'url' : 'http://mrjonathanpotter.com/wp-content/uploads/2019/03/ladp18-perfa-color-180609-ladp18-perfA-180609-DSCF7423.jpg',
+                'url' : './images/bw3-sq-field.jpg',
         },
             {
                 'uniqueID' : '02',
                 'type' : 'image',
                 'text' : '',
-                'url' : 'https://www.dropbox.com/s/29lyjg993zbgiar/135-012621-1-16-insta.jpg',
+                'url' : './images/bw6-sq-tree.jpg',
         },
             {
                 'uniqueID' : '03',
@@ -141,7 +141,7 @@ const myData = {
                 'uniqueID' : '04',
                 'type' : 'image',
                 'text' : '',
-                'url' : './jonathan-potter-tintype-072317_jpotter_pdx.jpg',
+                'url' : './images/jonathan-potter-tintype-072317_jpotter_pdx.jpg',
         },
             {
                 'uniqueID' : '05',
