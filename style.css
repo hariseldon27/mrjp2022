@@ -140,3 +140,17 @@ p.subtext  {
 .oregon {
   font-family: 'Shalimar', cursive;
 }
+
+.california {
+  font-family: 'Michroma', sans-serif;
+}
+
+/*block specific styles
+
+#item13 p {
+  background: rgba(44, 44, 44, 0.3);
+  width: 100%;
+  padding: 1rem;
+  
+}
+*/

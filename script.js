@@ -110,11 +110,13 @@ function deepIterator (target) {
       }
       deepIterator(p)
       */
+
+let count = 0;
 const fileStore = 'https://mrjpfiles.s3.us-west-2.amazonaws.com/'
 const myData = {
         blocks: [ 
             {
-                'uniqueID' : '00',
+                'uniqueID' : `${count}`,
                 'type' : 'image',
                 'url' : `california1-color-vert-23.jpg`,
         },
@@ -128,7 +130,7 @@ const myData = {
                 'uniqueID' : '02',
                 'type' : 'image',
                 'text' : ' ',
-                'url' : `california2-bw-sq.jpg`,
+                'url' : `california12-color-horiz-23.jpg`,
         },
             {
                 'uniqueID' : '03',
@@ -179,10 +181,40 @@ const myData = {
                 'type' : 'image',
                 'text' : 'I am from Oregon',
                 'url' : `california14-color-horiz-23.jpg`,
+                'subtext' : '',
                 'customtag' : 'oregon',
                 'fontcolor' : '#FFF',
                 'fontsize' : '6rem',
         },
+        {
+            'type' : 'image',
+            'text' : '',
+            'url' : 'cyanotype1-StillLife1.jpg',
+         },
+            {
+                'type' : 'image',
+                'text' : '',
+                'url' : `california15-color-horiz-23.jpg`,
+            },
+            {
+                'type' : 'image',
+                'text' : '',
+                'url' : `california16-color-horiz-23.jpg`,
+            },
+            {
+                'uniqueID' : '12',
+                'type' : 'image',
+                'text' : '',
+                'url' : `california11-color-horiz-23.jpg`,
+            },
+            {
+                'uniqueID' : '14',
+                'type' : 'image',
+                'text' : 'but I have a deep love for California',
+                'url' : `california7-bw-horiz-23.jpg`,
+                'customtag' : 'california',
+                'fontcolor' : '#e78b90'
+                },
             {
                 'uniqueID' : '11',
                 'type' : 'image',
@@ -190,23 +222,64 @@ const myData = {
                 'url' : `california4-color-sq.jpg`,
         },
             {
-                'uniqueID' : '12',
-                'type' : 'image',
-                'text' : '',
-                'url' : `california11-color-horiz-23.jpg`,
+               'uniqueID' : '08',
+                'type' : 'poster',
+                'text' : 'I lived in the bay area for five years.',
+                'subtext' : '~I went to graduate school there~',
+                'color' : '#e78b90',
+                'fontcolor' : ''
         },
         {
-            'uniqueID' : '13',
             'type' : 'image',
             'text' : '',
-            'url' : `jonathan-potter-self-working2.jpg`,
-            },
-        {
-            'uniqueID' : '14',
-            'type' : 'image',
-            'text' : 'but I have deep for California',
-            'url' : `california7-bw-horiz-23.jpg`,
-            },
+            'url' : 'california19-color-horiz-43.jpg',
+         },
+         {
+             'type' : 'poster',
+             'text' : 'I met my wife there->',
+             'subtext' : '',
+             'color' : '#0f4c81',
+             'fontcolor' : '#fff'
+     },
+            {
+                'type' : 'image',
+                'text' : '',
+                'url' : 'etc1-color-horiz-nyc.jpg',
+                'fontcolor' : '#fff',
+                'subtext' : 'this photo credit: jonathan devich',
+             },
+            {
+                'type' : 'image',
+                'text' : '',
+                'url' : 'california5-bw-horiz-23.jpg',
+             },
+            {
+                'type' : 'image',
+                'text' : '',
+                'url' : 'california2-bw-sq.jpg',
+                'customtag' : 'california',
+             },
+            {
+                'type' : 'image',
+                'text' : '',
+                'url' : 'california18-color-horiz-23.jpg',
+                'customtag' : 'california',
+             },
+            {
+                'type' : 'image',
+                'text' : 'but in 2016 we moved to Los Angeles',
+                'url' : 'california20-color-horiz-43-friends.jpg',
+                'customtag' : 'california',
+                'color' : '#0f4c81',
+                'fontcolor' : '#fff',
+             },
+            {
+                'type' : 'image',
+                'text' : 'this will be a production photo',
+                'url' : '',
+                'customtag' : 'california',
+             },
+
     ]
 }
         
@@ -217,7 +290,8 @@ function randomPicker(dataset) {
     return(randomChoice);
 }
 
-let count = 0;
+
+let blockCounter = 0;
 
 //below is our block builder - it injects all the data from the dataset above into the ul on the page...
 
