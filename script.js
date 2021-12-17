@@ -1,8 +1,8 @@
-const h2 = document.createElement('h2');
+/*const h2 = document.createElement('h2');
 h2.textContent = 'This content added by Javascript';
 
 document.querySelector('body').appendChild(h2);
-
+*/
 
 
 /* Dataset below!  
@@ -114,82 +114,82 @@ function deepIterator (target) {
 const myData = {
         blocks: [ 
             {
-              'uniqueID' : '00',
-              'property1' : 'image',
-              'text' : 'I love NYC',
-              'url' : 'http://mrjonathanpotter.com/wp-content/uploads/2018/10/HamletMachine-1730107.jpg',
+                'uniqueID' : '00',
+                'type' : 'image',
+                'text' : 'theater',
+                'url' : 'http://mrjonathanpotter.com/wp-content/uploads/2018/10/HamletMachine-1730107.jpg',
+        },
+            {
+                'uniqueID' : '01',
+                'type' : 'image',
+                'text' : 'dance',
+                'url' : 'http://mrjonathanpotter.com/wp-content/uploads/2019/03/ladp18-perfa-color-180609-ladp18-perfA-180609-DSCF7423.jpg',
+        },
+            {
+                'uniqueID' : '02',
+                'type' : 'image',
+                'text' : '',
+                'url' : 'http://mrjonathanpotter.com/wp-content/uploads/2019/03/bw-180602-ladp18-perfb-180602-DSCF7837.jpg"',
+        },
+            {
+                'uniqueID' : '03',
+                'type' : 'poster',
+                'text' : 'create',
+                'color' : '#f4f',
+        },
+            {
+                'uniqueID' : '04',
+                'type' : 'image',
+                'text' : 'I love nature',
+                'url' : 'http://mrjonathanpotter.com/wp-content/uploads/2018/10/jakroo18-180805-DSCF3799.jpg',
+        },
+            {
+                'uniqueID' : '05',
+                'type' : 'poster',
+                'text' : 'watch',
+                'color' : '#333',
+        },
+            {
+                'uniqueID' : '06',
+                'type' : 'poster',
+                'text' : 'the',
+                'color' : '#333',
+        },
+            {
+                'uniqueID' : '07',
+                'type' : 'poster',
+                'text' : 'sky',
+                'color' : '#333',
+        },
+            {
+                'uniqueID' : '08',
+                'type' : 'image',
+                'text' : 'go away bad man',
+                'url' : 'http://mrjonathanpotter.com/wp-content/uploads/2018/10/jakroo18-180804-DSCF1840.jpg',
         },
         {
-            'uniqueID' : '01',
-            'property1' : 'image',
-            'text' : 'I love nature',
-            'url' : 'http://mrjonathanpotter.com/wp-content/uploads/2019/03/ladp18-perfa-color-180609-ladp18-perfA-180609-DSCF7423.jpg',
+                'uniqueID' : '07',
+                'type' : 'image',
+                'text' : 'I love nature',
+                'url' : 'http://mrjonathanpotter.com/wp-content/uploads/2018/10/jakroo18-180805-DSCF3799.jpg',
         },
-        {
-            'uniqueID' : '02',
-            'property1' : 'image',
-            'text' : 'go away bad man',
-            'url' : 'http://mrjonathanpotter.com/wp-content/uploads/2019/03/bw-180602-ladp18-perfb-180602-DSCF7837.jpg"',
+            {
+                'uniqueID' : '08',
+                'type' : 'image',
+                'text' : 'go away bad man',
+                'url' : 'http://mrjonathanpotter.com/wp-content/uploads/2018/10/jakroo18-180804-DSCF1840.jpg',
         },
-        {
-            'uniqueID' : '03',
-            'property1' : 'image',
-            'text' : 'I love NYC',
-            'url' : 'http://mrjonathanpotter.com/wp-content/uploads/2018/10/jakroo18-180804-DSCF8684.jpg',
+            {
+                'uniqueID' : '07',
+                'type' : 'image',
+                'text' : 'I love nature',
+                'url' : 'http://mrjonathanpotter.com/wp-content/uploads/2018/10/jakroo18-180805-DSCF3799.jpg',
         },
-        {
-            'uniqueID' : '04',
-            'property1' : 'image',
-            'text' : 'I love nature',
-            'url' : 'http://mrjonathanpotter.com/wp-content/uploads/2018/10/jakroo18-180805-DSCF3799.jpg',
-        },
-        {
-            'uniqueID' : '05',
-            'property1' : 'image',
-            'text' : 'go away bad man',
-            'url' : 'http://mrjonathanpotter.com/wp-content/uploads/2018/10/jakroo18-180805-DSCF4313.jpg',
-        },
-        {
-            'uniqueID' : '06',
-            'property1' : 'image',
-            'text' : 'I love NYC',
-            'url' : 'http://mrjonathanpotter.com/wp-content/uploads/2018/10/jakroo18-180804-DSCF8684.jpg',
-        },
-        {
-            'uniqueID' : '07',
-            'property1' : 'image',
-            'text' : 'I love nature',
-            'url' : 'http://mrjonathanpotter.com/wp-content/uploads/2018/10/jakroo18-180805-DSCF3799.jpg',
-        },
-        {
-            'uniqueID' : '08',
-            'property1' : 'image',
-            'text' : 'go away bad man',
-            'url' : 'http://mrjonathanpotter.com/wp-content/uploads/2018/10/jakroo18-180804-DSCF1840.jpg',
-        },
-        {
-            'uniqueID' : '07',
-            'property1' : 'image',
-            'text' : 'I love nature',
-            'url' : 'http://mrjonathanpotter.com/wp-content/uploads/2018/10/jakroo18-180805-DSCF3799.jpg',
-        },
-        {
-            'uniqueID' : '08',
-            'property1' : 'image',
-            'text' : 'go away bad man',
-            'url' : 'http://mrjonathanpotter.com/wp-content/uploads/2018/10/jakroo18-180804-DSCF1840.jpg',
-        },
-        {
-            'uniqueID' : '07',
-            'property1' : 'image',
-            'text' : 'I love nature',
-            'url' : 'http://mrjonathanpotter.com/wp-content/uploads/2018/10/jakroo18-180805-DSCF3799.jpg',
-        },
-        {
-            'uniqueID' : '08',
-            'property1' : 'image',
-            'text' : 'go away bad man',
-            'url' : 'http://mrjonathanpotter.com/wp-content/uploads/2018/10/jakroo18-180804-DSCF1840.jpg',
+            {
+                'uniqueID' : '08',
+                'type' : 'image',
+                'text' : 'go away bad man',
+                'url' : 'http://mrjonathanpotter.com/wp-content/uploads/2018/10/jakroo18-180804-DSCF1840.jpg',
         },
     ]
 }
@@ -203,15 +203,21 @@ function randomPicker(dataset) {
 
 let count = 0;
 
+//below is our block builder - it injects all the data from the dataset above into the ul on the page...
+
 function blockBuilder() {
     for (let i=0; i < myData.blocks.length; i++) {
         count++;
         console.log(count);
+        const typer = myData.blocks[i].type;
+        const dataImage = myData.blocks[i].url;
+        const posterColor = myData.blocks[i].color;
+        
         function textInjector() {
             const text = myData.blocks[i].text;
             document.querySelector(`li#item${count} > .itemText`).innerHTML = text;
             }
-        const dataImage = myData.blocks[i].url;
+        
         function imageInject() {
             const img = document.createElement('img');
             document.querySelector(`ul#wrapper li#item${count}`).append(img);
@@ -219,7 +225,7 @@ function blockBuilder() {
         }
         function boxMaker () {
             const li = document.createElement('li');
-            li.classList.add(`itembox`);
+            li.classList.add(`itembox`, `${typer}`);
             li.id = `item${count}`;
             document.querySelector('ul#wrapper').append(li);
         }
@@ -228,12 +234,27 @@ function blockBuilder() {
             p.classList.add(`itemText`);
             document.querySelector(`ul#wrapper li#item${count}`).append(p);    
         }
-        boxMaker ();
-        imageInject();
+        function posterMaker() {
+
+        }
+        boxMaker();
         peeMaker();
+        
+
+        if (typer === `image`) { 
+            imageInject();}
+        else if (typer === `poster`) {
+            document.querySelector(`li#item${count}.poster`).style.backgroundColor = `${posterColor}`;
+        }
+
         textInjector();   
+        //debugger
+        console.log(typer);
+        console.log(posterColor);
     }
 }
 blockBuilder();
+
+//We need to add an empty li element to the end to help with stretch
 const li = document.createElement('li');
 document.querySelector('ul#wrapper').append(li);

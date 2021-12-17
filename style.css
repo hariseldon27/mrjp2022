@@ -34,6 +34,21 @@ img  {
     animation-iteration-count: 1;
 }
 
+.poster {
+  min-width: 20%;
+  max-width: 40%;
+}
+
+
+#item1 {
+  font-size : 200%;
+  color: white;
+}
+#item1 p {
+    background: rgba(233,233,233,.3);
+    height: 70%;
+    margin: auto;
+}
 
 /*///////////////
 /*globals*/
