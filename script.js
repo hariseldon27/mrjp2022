@@ -136,37 +136,61 @@ const myData = {
             'property1' : 'image',
             'text' : 'I love NYC',
             'url' : 'http://mrjonathanpotter.com/wp-content/uploads/2018/10/jakroo18-180804-DSCF8684.jpg',
-      },
-      {
-          'uniqueID' : '04',
-          'property1' : 'image',
-          'text' : 'I love nature',
-          'url' : 'http://mrjonathanpotter.com/wp-content/uploads/2018/10/jakroo18-180805-DSCF3799.jpg',
-      },
-      {
-          'uniqueID' : '05',
-          'property1' : 'image',
-          'text' : 'go away bad man',
-          'url' : 'http://mrjonathanpotter.com/wp-content/uploads/2018/10/jakroo18-180805-DSCF4313.jpg',
-      },
-      {
-        'uniqueID' : '03',
-        'property1' : 'image',
-        'text' : 'I love NYC',
-        'url' : 'http://mrjonathanpotter.com/wp-content/uploads/2018/10/jakroo18-180804-DSCF8684.jpg',
-  },
-  {
-      'uniqueID' : '04',
-      'property1' : 'image',
-      'text' : 'I love nature',
-      'url' : 'http://mrjonathanpotter.com/wp-content/uploads/2018/10/jakroo18-180805-DSCF3799.jpg',
-  },
-  {
-      'uniqueID' : '05',
-      'property1' : 'image',
-      'text' : 'go away bad man',
-      'url' : 'http://mrjonathanpotter.com/wp-content/uploads/2018/10/jakroo18-180804-DSCF1840.jpg',
-  },
+        },
+        {
+            'uniqueID' : '04',
+            'property1' : 'image',
+            'text' : 'I love nature',
+            'url' : 'http://mrjonathanpotter.com/wp-content/uploads/2018/10/jakroo18-180805-DSCF3799.jpg',
+        },
+        {
+            'uniqueID' : '05',
+            'property1' : 'image',
+            'text' : 'go away bad man',
+            'url' : 'http://mrjonathanpotter.com/wp-content/uploads/2018/10/jakroo18-180805-DSCF4313.jpg',
+        },
+        {
+            'uniqueID' : '06',
+            'property1' : 'image',
+            'text' : 'I love NYC',
+            'url' : 'http://mrjonathanpotter.com/wp-content/uploads/2018/10/jakroo18-180804-DSCF8684.jpg',
+        },
+        {
+            'uniqueID' : '07',
+            'property1' : 'image',
+            'text' : 'I love nature',
+            'url' : 'http://mrjonathanpotter.com/wp-content/uploads/2018/10/jakroo18-180805-DSCF3799.jpg',
+        },
+        {
+            'uniqueID' : '08',
+            'property1' : 'image',
+            'text' : 'go away bad man',
+            'url' : 'http://mrjonathanpotter.com/wp-content/uploads/2018/10/jakroo18-180804-DSCF1840.jpg',
+        },
+        {
+            'uniqueID' : '07',
+            'property1' : 'image',
+            'text' : 'I love nature',
+            'url' : 'http://mrjonathanpotter.com/wp-content/uploads/2018/10/jakroo18-180805-DSCF3799.jpg',
+        },
+        {
+            'uniqueID' : '08',
+            'property1' : 'image',
+            'text' : 'go away bad man',
+            'url' : 'http://mrjonathanpotter.com/wp-content/uploads/2018/10/jakroo18-180804-DSCF1840.jpg',
+        },
+        {
+            'uniqueID' : '07',
+            'property1' : 'image',
+            'text' : 'I love nature',
+            'url' : 'http://mrjonathanpotter.com/wp-content/uploads/2018/10/jakroo18-180805-DSCF3799.jpg',
+        },
+        {
+            'uniqueID' : '08',
+            'property1' : 'image',
+            'text' : 'go away bad man',
+            'url' : 'http://mrjonathanpotter.com/wp-content/uploads/2018/10/jakroo18-180804-DSCF1840.jpg',
+        },
     ]
 }
         
@@ -197,7 +221,7 @@ function blockBuilder() {
             const li = document.createElement('li');
             li.classList.add(`itembox`);
             li.id = `item${count}`;
-            document.querySelector('ul#wrapper').prepend(li);
+            document.querySelector('ul#wrapper').append(li);
         }
         function peeMaker() {
             const p = document.createElement('p');
@@ -211,4 +235,5 @@ function blockBuilder() {
     }
 }
 blockBuilder();
-
+const li = document.createElement('li');
+document.querySelector('ul#wrapper').append(li);
