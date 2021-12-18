@@ -1,118 +1,13 @@
-/*const h2 = document.createElement('h2');
-h2.textContent = 'This content added by Javascript';
-
-document.querySelector('body').appendChild(h2);
+let count = 0; /* so, this right here is why I'm sure this isn't working right - this count variable
+//is critical for everything - it's like a victorian era factory with all the machines running off a central 
+//steam driven axle.  Essentially, this counter is what steps us through the dataset and blockbuilder.
 */
 
+const fileStore = 'https://mrjpfiles.s3.us-west-2.amazonaws.com/' //this is where my lil piccies are stored
 
-/* Dataset below!  
-
-I have no idea if this is a good way to do this, but I figured what the heck!
-
-/*tag options!
-inspirational
-tangential
-personal
-wild
-urban
-wisdom
-family
+/* dataset below - I really really don't think this is a great way of doing this, but 
+//I'm experimenting with JS and trying to use some of the stuff I learned in the prework!
 */
-
-/* item template:
-item1: {
-      type: "image",
-      url: "https://picsum.photos/638/",
-      altText: "A lovely photo of downtown everywhereville.",
-      tag1: "inspirational",
-      tag2: "tangential"
-    },
-    item2: {
-        type: "poster",
-        text: "This is a poster block - whatcha think?",
-        background: "0f4c81",
-        orientation: "portrait",
-        tag1: "wild",
-        tag2: "wisdom"
-      },
-    item3: {
-        type: "youtube",
-        embed: "https://www.youtube.com/embed/tnXw9SFhDJk",
-        tag1: "family",
-        tag2: "personal"
-      },
-
-
-    */
-
-  /*function to iterate through the dataset and create a div based on "item" type*/
-
-
-
-/*for each item in the dataset create a new div and fill it with the item type.
-*/
-/*
-function itemGetter(dataset) {
-    const itemsHolder = []
-    for (let i=0; i < dataset.length; i++) {
-        let itemEach = dataset[i];
-        itemsHolder.push(itemEach)
-        console.log(itemEach);
-        return(itemEach);
-    }
-    console.log(itemsHolder);
-    return(itemsHolder);
-}
-itemGetter(["item1", "item2", "item3", "item4"])
-
-const itemNum = items.uniqueID;
-
-for (const key in itemNum) {
-    if (typeof items.itemNum[key] === "object") {
-        for (const nestedKey in items.itemNum[key]) {
-            console.log(itemNum[key][nestedKey]);
-        }
-    } else {
-        console.log(items[key]);
-    }
-}
-
-    console.log(`${key}: ${items[key]}`);
-    console.log(typeof items);
-    }
-    */
-
-    
-    /*document.querySelector('li').append(div);*/
-/*
-    function injectDiv(dataset) {
-        for (const key in dataset) {
-          if (dataset.hasOwnProperty(key)){
-            document.querySelector('ul').append(li);
-          }
-        }
-      }
-    
-    */
-
-/*
-      let counter = 0;
-
-function deepIterator (target) {
-
-    if (typeof target === 'object') {
-        for (const key in target) {
-            deepIterator(target[key]);
-          }
-        } else {
-          console.log(target);
-        }
-      }
-      deepIterator(p)
-      */
-
-let count = 0;
-const fileStore = 'https://mrjpfiles.s3.us-west-2.amazonaws.com/'
 const myData = {
         blocks: [ 
             {
@@ -176,6 +71,29 @@ const myData = {
                 'text' : '',
                 'url' : `california9-color-horiz-23.jpg`,
         },
+        {
+                'type' : 'image',
+                'text' : '',
+                'url' : `california6-bw-horiz-23.jpg`,
+        },
+        {
+                'type' : 'image',
+                'text' : '',
+                'url' : `cyanotype4-TheBuilder.jpg`,
+        },
+        {
+                'type' : 'image',
+                'text' : '',
+                'url' : `california8-bw--vert-23.jpg`,
+        },
+        {
+                'uniqueID' : '08',
+                'type' : 'poster',
+                'text' : 'everything here is my work',
+                'subtext' : '~unless noted~',
+                'color' : '#BAD9E8',
+                'fontcolor' : '#E8E6A2',
+    },
             {
                 'uniqueID' : '10',
                 'type' : 'image',
@@ -186,16 +104,16 @@ const myData = {
                 'fontcolor' : '#FFF',
                 'fontsize' : '6rem',
         },
-        {
-            'type' : 'image',
-            'text' : '',
-            'url' : 'cyanotype1-StillLife1.jpg',
-         },
             {
                 'type' : 'image',
                 'text' : '',
                 'url' : `california15-color-horiz-23.jpg`,
             },
+            {
+                'type' : 'image',
+                'text' : '',
+                'url' : 'cyanotype1-StillLife1.jpg',
+             },
             {
                 'type' : 'image',
                 'text' : '',
@@ -236,7 +154,7 @@ const myData = {
          },
          {
              'type' : 'poster',
-             'text' : 'I met my wife there->',
+             'text' : 'I met my wife Alex there->',
              'subtext' : '',
              'color' : '#0f4c81',
              'fontcolor' : '#fff'
@@ -246,7 +164,7 @@ const myData = {
                 'text' : '',
                 'url' : 'etc1-color-horiz-nyc.jpg',
                 'fontcolor' : '#fff',
-                'subtext' : 'this photo credit: jonathan devich',
+                'subtext' : '~this photo credit: jonathan devich~',
              },
             {
                 'type' : 'image',
@@ -267,7 +185,7 @@ const myData = {
              },
             {
                 'type' : 'image',
-                'text' : 'but in 2016 we moved to Los Angeles',
+                'text' : 'but in 2013 we moved to Los Angeles',
                 'url' : 'california20-color-horiz-43-friends.jpg',
                 'customtag' : 'california',
                 'color' : '#0f4c81',
@@ -275,9 +193,27 @@ const myData = {
              },
             {
                 'type' : 'image',
-                'text' : 'this will be a production photo',
-                'url' : '',
-                'customtag' : 'california',
+                'text' : '',
+                'url' : 'california23-color-vert.jpg',
+                'customtag' : '',
+             },
+            {
+                'type' : 'poster',
+                'text' : 'alex studied theater design',
+                'color' : '',
+                'customtag' : '',
+             },
+            {
+                'type' : 'image',
+                'text' : '',
+                'url' : 'california22-color-horiz.jpg',
+                'customtag' : '',
+             },
+            {
+                'type' : 'image',
+                'text' : 'jonathan took photos',
+                'url' : 'california21-color-horiz-friends.jpg',
+                'customtag' : '',
              },
 
     ]
