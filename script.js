@@ -95,6 +95,11 @@ const myData = {
                 'fontcolor' : '#E8E6A2',
     },
             {
+                'type' : 'image',
+                'text' : '',
+                'url' : `oregon1-color-horiz.jpg`,
+            },
+            {
                 'uniqueID' : '10',
                 'type' : 'image',
                 'text' : 'I am from Oregon',
@@ -104,11 +109,6 @@ const myData = {
                 'fontcolor' : '#FFF',
                 'fontsize' : '6rem',
         },
-            {
-                'type' : 'image',
-                'text' : '',
-                'url' : `california15-color-horiz-23.jpg`,
-            },
             {
                 'type' : 'image',
                 'text' : '',
@@ -126,9 +126,14 @@ const myData = {
                 'url' : `california11-color-horiz-23.jpg`,
             },
             {
+                'type' : 'poster',
+                'text' : 'but I have a deep love for California',
+                'color' : '#000',
+            },
+            {
                 'uniqueID' : '14',
                 'type' : 'image',
-                'text' : 'but I have a deep love for California',
+                'text' : '',
                 'url' : `california7-bw-horiz-23.jpg`,
                 'customtag' : 'california',
                 'fontcolor' : '#e78b90'
@@ -150,7 +155,22 @@ const myData = {
         {
             'type' : 'image',
             'text' : '',
+            'url' : 'california27-color-sq.jpg',
+         },
+        {
+            'type' : 'image',
+            'text' : '',
             'url' : 'california19-color-horiz-43.jpg',
+         },
+        {
+            'type' : 'image',
+            'text' : '',
+            'url' : 'california29-color-sq.jpg',
+         },
+        {
+            'type' : 'image',
+            'text' : '',
+            'url' : 'california33-bw-69.jpg',
          },
          {
              'type' : 'poster',
@@ -183,9 +203,22 @@ const myData = {
                 'url' : 'california18-color-horiz-23.jpg',
                 'customtag' : 'california',
              },
+             {
+                'type' : 'poster',
+                'text' : 'in 2013 we moved to Los Angeles',
+                'color' : '#E8E6A2',
+                'fontcolor' : 'e78b90',
+
+             },
             {
                 'type' : 'image',
-                'text' : 'but in 2013 we moved to Los Angeles',
+                'text' : '',
+                'url' : 'california30-color-sq.jpg',
+                'customtag' : 'california',
+             },
+            {
+                'type' : 'image',
+                'text' : '',
                 'url' : 'california20-color-horiz-43-friends.jpg',
                 'customtag' : 'california',
                 'color' : '#0f4c81',
@@ -195,26 +228,156 @@ const myData = {
                 'type' : 'image',
                 'text' : '',
                 'url' : 'california23-color-vert.jpg',
-                'customtag' : '',
              },
             {
                 'type' : 'poster',
                 'text' : 'alex studied theater design',
-                'color' : '',
-                'customtag' : '',
+                'color' : '#000',
+
              },
             {
                 'type' : 'image',
                 'text' : '',
                 'url' : 'california22-color-horiz.jpg',
-                'customtag' : '',
+             },
+            {
+                'type' : 'poster',
+                'text' : 'I took photos',
+                'url' : 'california22-color-horiz.jpg',
              },
             {
                 'type' : 'image',
-                'text' : 'jonathan took photos',
+                'text' : '',
                 'url' : 'california21-color-horiz-friends.jpg',
-                'customtag' : '',
+                'fontcolor' : '#fff',
              },
+             {
+                'type' : 'image',
+                'text' : '',
+                'url' : 'analogvideo4.gif',
+             },
+             {
+                'type' : 'image',
+                'text' : '',
+                'url' : 'california23-bw-horiz.jpg',
+             },
+             {
+                'type' : 'image',
+                'text' : '',
+                'url' : 'california26-color-horiz.jpg',
+             },
+             {
+                'type' : 'image',
+                'text' : '',
+                'url' : 'cycling1-ATOC18-uhcpc-bus.jpg',
+             },
+             {
+                'type' : 'poster',
+                'text' : 'somehow ... I found myself doing PR and digital media for an international professional cycling team',
+                'color' : '#fff',
+             },
+             {
+                'type' : 'image',
+                'text' : '',
+                'url' : 'cycling2-colombia18.jpg',
+             },
+             {
+                'type' : 'image',
+                'text' : 'and I started traveling',
+                'url' : 'cycling9-europe.jpg',
+                'fontcolor' : '#fff'
+             },
+             {
+                'type' : 'image',
+                'text' : '',
+                'url' : 'cycling3-colombia18.jpg',
+             },
+             {
+                'type' : 'image',
+                'text' : '',
+                'url' : 'cycling4-colombia18.jpg',
+                'fontcolor' : '#e78b90'
+             },
+             {
+                'type' : 'image',
+                'text' : 'lots of traveling',
+                'url' : 'cycling6-colombia18.jpg',
+                'fontcolor' : '#fff',
+             },
+             {
+                'type' : 'image',
+                'text' : '',
+                'url' : 'cycling7-colombia18.jpg',
+             },
+             {
+                'type' : 'image',
+                'text' : '',
+                'url' : 'cycling8-europe.jpg',
+             },
+             {
+                'type' : 'image',
+                'text' : '',
+                'url' : 'oregon2-color-horiz.jpg',
+             },
+             {
+                'type' : 'image',
+                'text' : '',
+                'url' : 'analogvideo3.gif',
+             },
+             {
+                'type' : 'image',
+                'text' : '',
+                'url' : 'california38-bw-135.jpg',
+             },
+             {
+                'type' : 'poster',
+                'text' : 'in 2018 I fell in with a bunch of dancers',
+                'subtext' : '~LA Dance Project to be specific~',
+                'color' : '#e78b90',
+                
+             },
+             {
+                'type' : 'image',
+                'text' : '',
+                'url' : 'ladp5-color-vert.jpg',
+             },
+             {
+                'type' : 'image',
+                'text' : '',
+                'url' : 'california39-bw-135-ladp.jpg',
+             },
+             {
+                'type' : 'image',
+                'text' : '',
+                'url' : 'ladp3-bw-135.jpg',
+             },
+             {
+                'type' : 'image',
+                'text' : '',
+                'url' : 'ladp8-color-horiz.jpg',
+             },
+             {
+                'type' : 'image',
+                'text' : '',
+                'url' : 'ladp1-bw-135.jpg',
+             },
+             {
+                'type' : 'image',
+                'text' : '',
+                'url' : 'ladp7-color-horiz.jpg',
+             },
+             {
+                'type' : 'image',
+                'text' : '',
+                'url' : 'ladp2-bw-135.jpg',
+             },
+             {
+                'type' : 'poster',
+                'text' : 'then in 2019 I put up a solo show',
+                'color' : '#000',
+                'fontcolor' : '#e78b90',
+             },
+
 
     ]
 }
