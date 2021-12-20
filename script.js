@@ -107,7 +107,6 @@ const myData = {
                 'subtext' : '',
                 'customtag' : 'oregon',
                 'fontcolor' : '#FFF',
-                'fontsize' : '6rem',
         },
             {
                 'type' : 'image',
@@ -373,10 +372,13 @@ const myData = {
              },
              {
                 'type' : 'poster',
-                'text' : 'then in 2019 I put up a solo show',
+                'text' : 'in 2019 I put up a solo show',
                 'color' : '#000',
                 'fontcolor' : '#e78b90',
              },
+             {
+                 'type' : 'image',
+             }
 
 
     ]
